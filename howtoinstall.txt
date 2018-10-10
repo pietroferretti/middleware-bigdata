@@ -1,14 +1,11 @@
 mkvirtualenv spark --python=/usr/bin/python3
 pip install pyspark
-pip install findspark
 export SPARK_HOME=/home/peter/.virtualenvs/spark/lib/python3.6/site-packages/pyspark/
 export PATH=$PATH:$SPARK_HOME/bin
 
 jupyter-notebook
-'''
-import findspark
-findspark.init()
 
+'''
 import pyspark
-sc = pyspark.SparkContext(appName="App")
+sc = pyspark.SparkContext("local[*], "MyProject")
 '''
